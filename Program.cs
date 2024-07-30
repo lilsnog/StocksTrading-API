@@ -1,4 +1,6 @@
 using api.Data;
+using api.Interfaces;
+using api.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,8 @@ builder.Services.AddDbContext<ApplicationDBContext>( options => options.UseSqlSe
 //dotnet tool update --global dotnet-ef
 //dotnet ef migration add init
 //dotnet ef database update --connection "Server=GMB-PC-KELNNA;Database=finshark;User Id=sa;Password=SupportAdmin@321;Integrated Security=True;TrustServerCertificate=true;Trusted_Connection=false"
+
+builder.Services.AddScoped<iStockRepository, StockRepository>();
 
 
 var app = builder.Build();
