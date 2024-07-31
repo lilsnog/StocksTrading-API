@@ -21,6 +21,7 @@ builder.Services.AddDbContext<ApplicationDBContext>( options => options.UseSqlSe
 //dotnet ef database update --connection "Server=GMB-PC-KELNNA;Database=finshark;User Id=sa;Password=SupportAdmin@321;Integrated Security=True;TrustServerCertificate=true;Trusted_Connection=false"
 
 builder.Services.AddScoped<iStockRepository, StockRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 
 var app = builder.Build();
